@@ -17,10 +17,10 @@ namespace Mistaken.ImpactGrenade
         public override string Author => "Mistaken Devs";
 
         /// <inheritdoc/>
-        public override string Name => "Mistaken API";
+        public override string Name => "ImpactGrenade";
 
         /// <inheritdoc/>
-        public override string Prefix => "MAPI";
+        public override string Prefix => "MIMP";
 
         /// <inheritdoc/>
         public override PluginPriority Priority => PluginPriority.Higher;
