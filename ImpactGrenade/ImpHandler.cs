@@ -53,28 +53,8 @@ namespace Mistaken.ImpactGrenade
         /// <summary>
         /// Grenade that explodes on impact.
         /// </summary>
-        public class ImpItem : CustomItem
+        public class ImpItem : CustomItem<ImpItem>
         {
-            /// <summary>
-            /// Gives Impact Grenade to <paramref name="player"/>.
-            /// </summary>
-            /// <param name="player">Player that Impact Grenade should be given to.</param>
-            public static void Give(Player player)
-            {
-                if (player.Inventory.items.Count < 8)
-                {
-                    player.AddItem(new Inventory.SyncItemInfo
-                    {
-                        durability = 1000f,
-                        id = ItemType.GrenadeFrag,
-                    });
-                    player.SetSessionVar(SessionVarType.CI_IMPACT, true);
-                }
-            }
-
-            /// <inheritdoc cref="CustomItem.Register"/>
-            public ImpItem() => this.Register();
-
             /// <inheritdoc/>
             public override string ItemName => "Impact Grenade";
 
@@ -130,18 +110,24 @@ namespace Mistaken.ImpactGrenade
             public override void OnStartHolding(Player player, Inventory.SyncItemInfo item)
             {
                 player.SetGUI("impact", PseudoGUIPosition.BOTTOM, "Trzymasz <color=yellow>Granat Uderzeniowy</color>");
+
+                base.OnStartHolding(player, item);
             }
 
             /// <inheritdoc/>
             public override void OnStopHolding(Player player, Inventory.SyncItemInfo item)
             {
                 player.SetGUI("impact", PseudoGUIPosition.BOTTOM, null);
+
+                base.OnStopHolding(player, item);
             }
 
             /// <inheritdoc/>
             public override void OnForceclass(Player player)
             {
                 player.SetGUI("impact", PseudoGUIPosition.BOTTOM, null);
+
+                base.OnForceclass(player);
             }
         }
 
