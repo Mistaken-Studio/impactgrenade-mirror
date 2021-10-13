@@ -47,6 +47,7 @@ namespace Mistaken.ImpactGrenade
         private void Server_RoundStarted()
         {
             ExplodeDestructiblesPatch.Grenades.Clear();
+            ServerThrowPatch.ThrowedItems.Clear();
             var structureLockers = UnityEngine.Object.FindObjectsOfType<MapGeneration.Distributors.SpawnableStructure>().Where(x => x.StructureType == MapGeneration.Distributors.StructureType.LargeGunLocker);
             var lockers = structureLockers.Select(x => x as MapGeneration.Distributors.Locker).Where(x => x.Chambers.Length > 8).ToArray();
             var locker = lockers[UnityEngine.Random.Range(0, lockers.Length)];
