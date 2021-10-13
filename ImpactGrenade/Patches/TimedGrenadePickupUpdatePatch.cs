@@ -56,7 +56,6 @@ namespace Mistaken.ImpactGrenade
             thrownProjectile.NetworkInfo = __instance.Info;
             thrownProjectile.PreviousOwner = __instance._attacker;
             NetworkServer.Spawn(thrownProjectile.gameObject, ownerConnection: null);
-            Log.Debug(__instance.Info.Serial);
             if (CustomItem.Get(9).TrackedSerials.Contains(__instance.Info.Serial))
             {
                 ExplodeDestructiblesPatch.Grenades.Add(thrownProjectile);

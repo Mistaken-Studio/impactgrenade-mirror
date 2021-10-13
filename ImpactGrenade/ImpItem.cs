@@ -70,10 +70,7 @@ namespace Mistaken.ImpactGrenade
         {
             var pickup = base.Spawn(position);
             pickup.Scale = ImpHandler.Size;
-            TimedGrenadePickup grenade = (TimedGrenadePickup)pickup.Base;
-            if (grenade != null)
-                grenade.Info.Serial = pickup.Serial;
-
+            pickup.Base.Info.Serial = pickup.Serial;
             return pickup;
         }
 
@@ -82,10 +79,7 @@ namespace Mistaken.ImpactGrenade
         {
             var pickup = base.Spawn(position, item);
             pickup.Scale = ImpHandler.Size;
-            TimedGrenadePickup grenade = (TimedGrenadePickup)pickup.Base;
-            if (grenade != null)
-                grenade.Info.Serial = pickup.Serial;
-
+            pickup.Base.Info.Serial = pickup.Serial;
             return pickup;
         }
 
