@@ -26,7 +26,7 @@ namespace Mistaken.ImpactGrenade
         public override PluginPriority Priority => PluginPriority.Medium;
 
         /// <inheritdoc/>
-        public override Version RequiredExiledVersion => new Version(2, 11, 0);
+        public override Version RequiredExiledVersion => new Version(3, 0, 4);
 
         /// <inheritdoc/>
         public override void OnEnabled()
@@ -37,9 +37,8 @@ namespace Mistaken.ImpactGrenade
             this.harmony.PatchAll();
 
             new ImpHandler(this);
-            new FlashImpHandler(this);
-            new BallFixModule(this);
 
+            // new BallFixModule(this);
             API.Diagnostics.Module.OnEnable(this);
 
             base.OnEnabled();

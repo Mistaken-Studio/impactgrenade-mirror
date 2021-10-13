@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Grenades;
+using InventorySystem.Items.ThrowableProjectiles;
 using UnityEngine;
 
 namespace Mistaken.ImpactGrenade
@@ -14,15 +14,25 @@ namespace Mistaken.ImpactGrenade
     /// </summary>
     public class ImpComponent : MonoBehaviour
     {
-        private bool used;
+        private ExplosionGrenade grenade;
 
-        private void OnCollisionEnter(Collision collision)
+        private void Awake()
         {
-            if (!this.used && this.TryGetComponent<FragGrenade>(out FragGrenade frag))
-                frag.NetworkfuseTime = 0.01f;
-            else if (!this.used && this.TryGetComponent<FlashGrenade>(out FlashGrenade flash))
-                flash.NetworkfuseTime = 0.01f;
-            this.used = true;
+            this.grenade = this.GetComponent<ExplosionGrenade>();
+        }
+
+        private void OnCollisionEnter(Collision collider)
+        {
+            if (collider.gameObject.TryGetComponent<IDestructible>(out var component))
+            {
+                if (ReferenceHub.TryGetHubNetID(component.NetworkId, out var referenceHub))
+                {
+                    if (this.grenade.PreviousOwner.Hub != referenceHub)
+                        return;
+                }
+            }
+
+            this.grenade.TargetTime = 0.1f;
         }
     }
 }
