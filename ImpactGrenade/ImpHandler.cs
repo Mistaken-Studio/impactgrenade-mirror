@@ -5,13 +5,9 @@
 // -----------------------------------------------------------------------
 
 using System.Linq;
-using System.Runtime.CompilerServices;
-using Exiled.API.Features;
 using Exiled.API.Features.Items;
 using Exiled.API.Interfaces;
 using Exiled.CustomItems.API.Features;
-using InventorySystem.Items.ThrowableProjectiles;
-using Mistaken.API;
 using Mistaken.API.Diagnostics;
 using Mistaken.RoundLogger;
 using UnityEngine;

@@ -6,7 +6,6 @@
 
 using System;
 using System.Collections.Generic;
-using Exiled.API.Features;
 using HarmonyLib;
 using InventorySystem.Items.ThrowableProjectiles;
 using Mirror;

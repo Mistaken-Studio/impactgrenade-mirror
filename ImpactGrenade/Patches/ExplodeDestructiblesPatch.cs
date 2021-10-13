@@ -6,8 +6,6 @@
 
 using System.Collections.Generic;
 using CustomPlayerEffects;
-using Exiled.API.Features;
-using Exiled.CustomItems.API.Features;
 using HarmonyLib;
 using InventorySystem.Items.Firearms.BasicMessages;
 using InventorySystem.Items.MicroHID;

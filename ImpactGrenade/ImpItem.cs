@@ -5,19 +5,14 @@
 // -----------------------------------------------------------------------
 
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.API.Features.Items;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomItems.API.Features;
 using Exiled.Events.EventArgs;
-using Footprinting;
-using InventorySystem.Items;
-using InventorySystem.Items.Pickups;
 using InventorySystem.Items.ThrowableProjectiles;
 using MEC;
-using Mirror;
 using Mistaken.API.Extensions;
 using Mistaken.API.GUI;
 using Mistaken.RoundLogger;
