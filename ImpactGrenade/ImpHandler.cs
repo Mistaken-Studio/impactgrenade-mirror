@@ -55,7 +55,7 @@ namespace Mistaken.ImpactGrenade
             while (toSpawn > 0)
             {
                 var chamber = locker.Chambers[UnityEngine.Random.Range(0, locker.Chambers.Length)];
-                CustomItem.TrySpawn(9, chamber._spawnpoint.position + (Vector3.up / 10), out Pickup pickup);
+                CustomItem.TrySpawn(2, chamber._spawnpoint.position + (Vector3.up / 10), out Pickup pickup);
                 chamber._content.Add(pickup.Base);
                 RLogger.Log("IMPACT GRENADE", "SPAWN", $"Impact grenade spawned");
                 toSpawn--;
