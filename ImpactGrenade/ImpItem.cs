@@ -25,22 +25,6 @@ namespace Mistaken.ImpactGrenade
     /// </summary>
     public class ImpItem : CustomGrenade
     {
-        /*
-        /// <inheritdoc/>
-        public override SessionVarType SessionVarType => SessionVarType.CI_IMPACT;
-
-        /// <inheritdoc/>
-        public override Upgrade[] Upgrades => new Upgrade[]
-        {
-            new Upgrade
-            {
-                Chance = 100,
-                Durability = null,
-                Input = ItemType.GrenadeFrag,
-                KnobSetting = Scp914.Scp914Knob.Fine,
-            },
-        };*/
-
         /// <inheritdoc/>
         public override ItemType Type { get; set; } = ItemType.GrenadeHE;
 
@@ -51,7 +35,7 @@ namespace Mistaken.ImpactGrenade
         public override float FuseTime { get; set; } = 3;
 
         /// <inheritdoc/>
-        public override uint Id { get; set; } = 9;
+        public override uint Id { get; set; } = 2;
 
         /// <inheritdoc/>
         public override string Name { get; set; } = "Impact Grenade";
